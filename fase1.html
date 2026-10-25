@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fase 1 - Kotak Jawaban</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: transparent;">
+
+<div style="
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100%; box-sizing: border-box; padding: 12px;
+  background: #ffffff; border: 1.5px solid #bfd8f6; border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04); color: #19365b;
+">
+  <!-- AREA INPUT INFORMASI KASUS -->
+  <div style="margin-bottom: 12px;">
+    <label for="fase1_info" style="display: block; font-size: 13.5px; font-weight: 700; margin-bottom: 6px; color: #234d7d; line-height: 1.4;">
+      📌 Tuliskan informasi atau fakta-fakta penting yang berhasil kelompokmu temukan dari kasus tersebut!
+    </label>
+    <textarea id="fase1_info" required
+      placeholder="Tuliskan fakta-fakta penting yang ditemukan dari bacaan/kasus...&#10;1. Fakta pertama...&#10;2. Fakta kedua..."
+      style="
+        display: block; width: 100%; height: 130px; padding: 10px;
+        border: 1px solid #bfd8f6; border-radius: 8px;
+        background: #fff; color: #19365b; font-family: inherit;
+        font-size: 13px; line-height: 1.5; resize: vertical;
+        box-sizing: border-box; outline-color: #438fe5;
+      "></textarea>
+    <div style="font-size: 11px; color: #7189a7; margin-top: 4px;">
+      💡 Gunakan poin-poin atau nomor untuk memisahkan setiap fakta penting yang ditemukan.
+    </div>
+  </div>
+
+  <!-- STATUS PENYIMPANAN -->
+  <div id="st" role="status" aria-live="polite" style="
+    min-height: 18px; font-size: 12px; margin-top: 6px;
+    text-align: center; font-weight: 600; line-height: 1.4;
+  "></div>
+
+  <!-- TOMBOL KONFIRMASI LOKAL -->
+  <button type="button" id="tombolSimpan" onclick="simpanFase1()" style="
+    display: block; width: 100%; padding: 10px; margin-top: 6px;
+    border: none; border-radius: 8px;
+    background: linear-gradient(135deg, #1769c2, #3989e8);
+    color: white; font-size: 13.5px; font-weight: 700;
+    font-family: inherit; cursor: pointer;
+    box-shadow: 0 3px 8px rgba(23,105,194,.20);
+  ">
+    💾 Simpan Jawaban Fase 1
+  </button>
+</div>
+
+<script>
+(function () {
+  // KUNCI DISESUAIKAN SAMA KODE PENGUMPULAN (elkpd_fase1)
+  const KUNCI_STORAGE = "elkpd_fase1";
+  const inputInfo = document.getElementById("fase1_info");
+  const st = document.getElementById("st");
+
+  function simpanLokal() {
+    try {
+      localStorage.setItem(KUNCI_STORAGE, inputInfo.value.trim());
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function muatLokal() {
+    try {
+      const savedValue = localStorage.getItem(KUNCI_STORAGE);
+      if (savedValue !== null) {
+        inputInfo.value = savedValue;
+      }
+    } catch (e) {
+      st.textContent = "⚠️ Penyimpanan otomatis tidak tersedia di browser ini.";
+      st.style.color = "#d9534f";
+    }
+  }
+
+  function simpanOtomatis() {
+    if (simpanLokal()) {
+      st.textContent = "💾 Jawaban tersimpan otomatis di perangkat.";
+      st.style.color = "#1769c2";
+    }
+  }
+
+  inputInfo.addEventListener("input", simpanOtomatis);
+
+  window.simpanFase1 = function () {
+    if (!inputInfo.value.trim()) {
+      st.textContent = "⚠️ Tuliskan fakta penting kasus terlebih dahulu sebelum menyimpan.";
+      st.style.color = "#d9534f";
+      return;
+    }
+
+    if (simpanLokal()) {
+      st.textContent = "✅ Jawaban Fase 1 berhasil tersimpan!";
+      st.style.color = "#218044";
+    } else {
+      st.textContent = "⚠️ Browser tidak dapat menyimpan isian secara lokal.";
+      st.style.color = "#d9534f";
+    }
+  };
+
+  muatLokal();
+})();
+</script>
+
+</body>
+</html>
