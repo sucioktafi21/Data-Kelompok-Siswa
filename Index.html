@@ -1,207 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identitas Kelompok E-LKPD</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: transparent;">
 
 <div style="
-  font-family:'Segoe UI',Arial,sans-serif;
-  width:100%;max-width:1000px;margin:0 auto;padding:16px 22px;
-  background:linear-gradient(145deg,#fff,#f0f7ff);
-  border:1px solid #d5e7ff;border-radius:18px;
-  box-shadow:0 6px 20px rgba(35,100,180,.10);
-  color:#19365b;box-sizing:border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 95%;
+  max-width: 850px;
+  margin: 10px auto;
+  padding: 20px 24px;
+  background: linear-gradient(145deg, #ffffff, #f0f7ff);
+  border: 1px solid #d5e7ff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(35, 100, 180, 0.12);
+  color: #19365b;
+  box-sizing: border-box;
 ">
+
+  <!-- HEADER LANDSCAPE -->
   <div style="
-    background:linear-gradient(135deg,#1769c2,#63a7f5);
-    padding:13px 18px;border-radius:13px;margin-bottom:16px;
-    color:white;text-align:center;
+    background: linear-gradient(135deg, #1769c2, #63a7f5);
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
   ">
-    <div style="font-size:28px;">🧪</div>
-    <div style="font-size:23px;font-weight:800;">IDENTITAS KELOMPOK</div>
-    <div style="font-size:14px;margin-top:4px;">
-      E-LKPD Interaktif · Kesetimbangan Kimia
-    </div>
-  </div>
-
-  <div style="
-    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:14px 20px;align-items:start;
-  ">
+    <div style="font-size: 26px;">🧪</div>
     <div>
-      <label for="kode" style="display:block;font-size:16px;font-weight:700;margin-bottom:7px;color:#234d7d;">
-        🔑 Kode Kelompok
-      </label>
-      <select id="kode" required style="
-        width:100%;padding:12px;border:1px solid #bfd8f6;
-        border-radius:10px;background:#fff;color:#234d7d;
-        font-size:16px;box-sizing:border-box;
-      ">
-        <option value="">Pilih kelompokmu</option>
-        <option value="KLP01">KLP01 — Kelompok 1</option>
-        <option value="KLP02">KLP02 — Kelompok 2</option>
-        <option value="KLP03">KLP03 — Kelompok 3</option>
-        <option value="KLP04">KLP04 — Kelompok 4</option>
-        <option value="KLP05">KLP05 — Kelompok 5</option>
-        <option value="KLP06">KLP06 — Kelompok 6</option>
-        <option value="KLP07">KLP07 — Kelompok 7</option>
-        <option value="KLP08">KLP08 — Kelompok 8</option>
-        <option value="KLP09">KLP09 — Kelompok 9</option>
-        <option value="KLP10">KLP10 — Kelompok 10</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="kelas" style="display:block;font-size:16px;font-weight:700;margin-bottom:7px;color:#234d7d;">
-        🏫 Kelas
-      </label>
-      <input type="text" id="kelas" required placeholder="Contoh: XI. 3.1"
-        style="
-          width:100%;padding:12px;border:1px solid #bfd8f6;
-          border-radius:10px;background:#fff;color:#19365b;
-          font-family:inherit;font-size:16px;box-sizing:border-box;
-        ">
-    </div>
-
-    <div style="grid-column:1 / -1;">
-      <label for="anggota" style="display:block;font-size:16px;font-weight:700;margin-bottom:7px;color:#234d7d;">
-        👥 Nama Anggota Kelompok
-      </label>
-      <textarea id="anggota" required
-        placeholder="Tuliskan nama seluruh anggota kelompok, satu nama per baris."
-        style="
-          display:block;width:100%;height:100px;padding:12px;
-          border:1px solid #bfd8f6;border-radius:10px;
-          background:#fff;color:#19365b;font-family:inherit;
-          font-size:15px;line-height:1.5;resize:vertical;
-          box-sizing:border-box;
-        "></textarea>
-      <div style="font-size:13px;color:#7189a7;margin-top:5px;">
-        💡 Masukkan nama setiap anggota pada baris terpisah.
+      <div style="font-size: 18px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">
+        Identitas Kelompok
+      </div>
+      <div style="font-size: 12px; opacity: 0.95;">
+        E-LKPD Interaktif · Kesetimbangan Kimia
       </div>
     </div>
   </div>
 
-  <div id="st" role="status" aria-live="polite" style="
-    min-height:22px;font-size:14px;margin-top:10px;
-    text-align:center;font-weight:600;line-height:1.5;
-  "></div>
-
-  <button type="button" id="tombolSimpan" onclick="simpanLokalDanLanjut()" style="
-    display:block;width:100%;padding:13px 16px;margin-top:8px;
-    border:none;border-radius:11px;
-    background:linear-gradient(135deg,#1769c2,#3989e8);
-    color:white;font-size:16px;font-weight:700;
-    font-family:inherit;cursor:pointer;
-    box-shadow:0 4px 10px rgba(23,105,194,.20);
+  <!-- CONTAINER GRID LANDSCAPE (2 KOLOM SAMA TINGGI) -->
+  <div style="
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+    margin-bottom: 16px;
   ">
-    ✅ Simpan Identitas &amp; Lanjut ke Fase 1
+
+    <!-- KOLOM KIRI: KODE KELOMPOK & KELAS -->
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+      <div>
+        <label for="kode" style="
+          display: block;
+          font-size: 13px;
+          font-weight: 700;
+          margin-bottom: 6px;
+          color: #234d7d;
+        ">
+          🔑 Kode Kelompok
+        </label>
+        <select id="kode" required style="
+          width: 100%;
+          padding: 10px 12px;
+          border: 1px solid #bfd8f6;
+          border-radius: 9px;
+          background: #ffffff;
+          color: #234d7d;
+          font-size: 13px;
+          font-weight: 600;
+          outline-color: #438fe5;
+          box-sizing: border-box;
+        ">
+          <option value="">Pilih kelompokmu</option>
+          <option value="KLP01">KLP01 — Kelompok 1</option>
+          <option value="KLP02">KLP02 — Kelompok 2</option>
+          <option value="KLP03">KLP03 — Kelompok 3</option>
+          <option value="KLP04">KLP04 — Kelompok 4</option>
+          <option value="KLP05">KLP05 — Kelompok 5</option>
+          <option value="KLP06">KLP06 — Kelompok 6</option>
+          <option value="KLP07">KLP07 — Kelompok 7</option>
+          <option value="KLP08">KLP08 — Kelompok 8</option>
+          <option value="KLP09">KLP09 — Kelompok 9</option>
+          <option value="KLP10">KLP10 — Kelompok 10</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="kelas" style="
+          display: block;
+          font-size: 13px;
+          font-weight: 700;
+          margin-bottom: 6px;
+          color: #234d7d;
+        ">
+          🏫 Kelas
+        </label>
+        <input type="text" id="kelas" required placeholder="Contoh: XI. 3.1" style="
+          width: 100%;
+          padding: 10px 12px;
+          border: 1px solid #bfd8f6;
+          border-radius: 9px;
+          background: #ffffff;
+          color: #19365b;
+          font-family: inherit;
+          font-size: 13px;
+          box-sizing: border-box;
+          outline-color: #438fe5;
+        ">
+      </div>
+    </div>
+
+    <!-- KOLOM KANAN: NAMA ANGGOTA KELOMPOK -->
+    <div>
+      <label for="anggota" style="
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #234d7d;
+      ">
+        👥 Nama Anggota Kelompok
+      </label>
+      <textarea id="anggota" required
+        placeholder="Tuliskan nama seluruh anggota kelompok...&#10;1. Nama anggota 1&#10;2. Nama anggota 2&#10;3. Nama anggota 3"
+        style="
+          width: 100%;
+          height: 102px;
+          padding: 10px 12px;
+          border: 1px solid #bfd8f6;
+          border-radius: 9px;
+          background: #ffffff;
+          color: #19365b;
+          font-family: inherit;
+          font-size: 13px;
+          line-height: 1.5;
+          resize: none;
+          box-sizing: border-box;
+          outline-color: #438fe5;
+        "
+      ></textarea>
+      <div style="font-size: 11px; color: #7189a7; margin-top: 4px;">
+        💡 Masukkan nama setiap anggota pada baris terpisah.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TOMBOL KONFIRMASI LOKAL -->
+  <button type="button" onclick="simpanIdentitas()" style="
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #1769c2, #3989e8);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: inherit;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(23, 105, 194, 0.2);
+  ">
+    💾 Simpan Identitas Kelompok
   </button>
 
-  <div style="text-align:center;margin-top:12px;font-size:12px;color:#7189a7;">
-    ✦ Pastikan identitas kelompok sudah benar sebelum melanjutkan ✦
+  <div id="st" role="status" aria-live="polite" style="
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.5;
+  "></div>
+
+  <!-- FOOTER -->
+  <div style="
+    text-align: center;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #dceafa;
+    font-size: 11px;
+    color: #7189a7;
+  ">
+    ✦ Identitas tersimpan otomatis di perangkat · Lanjut kerjakan ke slide berikutnya ✦
   </div>
+
 </div>
 
+<!-- SCRIPT AUTOSAVE LOKAL (TANPA KIRIM KE SHEETS DI AWAL) -->
 <script>
-(function () {
-  // URL GOOGLE APPS SCRIPT
-  const URL_WEB_APP =
-    "https://script.google.com/macros/s/AKfycbyIP2C1unNQ3urNeM65S_UOvy5z708BPsjhblljzTecTlxe3VgGsfM6EDOf9uDhZb8p5A/exec";
+  // 1. FUNGSI UTAMA AUTO-SAVE KE MEMORI BROWSER (localStorage)
+  function simpanOtomatisLokal() {
+    const kode = document.getElementById("kode").value;
+    const anggota = document.getElementById("anggota").value;
+    const kelas = document.getElementById("kelas").value;
 
-  const kunci = {
-    kode: "elkpd_kode",
-    anggota: "elkpd_anggota",
-    kelas: "elkpd_kelas"
-  };
-
-  const kode = document.getElementById("kode");
-  const anggota = document.getElementById("anggota");
-  const kelas = document.getElementById("kelas");
-  const st = document.getElementById("st");
-  const tombol = document.getElementById("tombolSimpan");
-
-  function simpanLokal() {
-    try {
-      localStorage.setItem(kunci.kode, kode.value);
-      localStorage.setItem(kunci.anggota, anggota.value);
-      localStorage.setItem(kunci.kelas, kelas.value);
-      return true;
-    } catch (e) {
-      return false;
-    }
+    localStorage.setItem("elkpd_kode", kode);
+    localStorage.setItem("elkpd_anggota", anggota);
+    localStorage.setItem("elkpd_kelas", kelas);
   }
 
-  function muatLokal() {
-    try {
-      kode.value = localStorage.getItem(kunci.kode) || "";
-      anggota.value = localStorage.getItem(kunci.anggota) || "";
-      kelas.value = localStorage.getItem(kunci.kelas) || "";
-    } catch (e) {
-      st.textContent = "Penyimpanan otomatis tidak tersedia.";
-      st.style.color = "#d9534f";
-    }
+  // 2. FUNGSI UNTUK MEMUAT KEMBALI ISIAN SAAT SLIDE DIBUKA
+  function muatOtomatisLokal() {
+    const savedKode = localStorage.getItem("elkpd_kode");
+    const savedAnggota = localStorage.getItem("elkpd_anggota");
+    const savedKelas = localStorage.getItem("elkpd_kelas");
+
+    if (savedKode) document.getElementById("kode").value = savedKode;
+    if (savedAnggota) document.getElementById("anggota").value = savedAnggota;
+    if (savedKelas) document.getElementById("kelas").value = savedKelas;
   }
 
-  function simpanOtomatis() {
-    if (simpanLokal()) {
-      st.textContent = "💾 Isian tersimpan otomatis di browser.";
-      st.style.color = "#1769c2";
-    }
-  }
+  // PASANG LISTENER AUTO-SAVE SAAT KETIK / PILIH
+  window.addEventListener("DOMContentLoaded", () => {
+    muatOtomatisLokal();
 
-  kode.addEventListener("change", simpanOtomatis);
-  anggota.addEventListener("input", simpanOtomatis);
-  kelas.addEventListener("input", simpanOtomatis);
+    document.getElementById("kode").addEventListener("change", simpanOtomatisLokal);
+    document.getElementById("anggota").addEventListener("input", simpanOtomatisLokal);
+    document.getElementById("kelas").addEventListener("input", simpanOtomatisLokal);
+  });
 
-  window.simpanLokalDanLanjut = async function () {
-    if (!kode.value || !anggota.value.trim() || !kelas.value.trim()) {
-      st.textContent =
-        "⚠️ Lengkapi kode kelompok, nama anggota, dan kelas.";
+  // 3. FUNGSI TOMBOL KONFIRMASI
+  function simpanIdentitas() {
+    const kode = document.getElementById("kode").value.trim();
+    const anggota = document.getElementById("anggota").value.trim();
+    const kelas = document.getElementById("kelas").value.trim();
+    const st = document.getElementById("st");
+
+    if (!kode || !anggota || !kelas) {
+      st.innerText = "⚠️ Mohon lengkapi semua kolom terlebih dahulu!";
       st.style.color = "#d9534f";
       return;
     }
 
-    if (!simpanLokal()) {
-      st.textContent =
-        "⚠️ Browser tidak dapat menyimpan isian secara lokal.";
-      st.style.color = "#d9534f";
-      return;
-    }
+    // Mengunci data di localStorage
+    simpanOtomatisLokal();
 
-    tombol.disabled = true;
-    tombol.style.opacity = "0.7";
-    tombol.textContent = "⏳ Mengirim identitas...";
-
-    st.textContent = "Identitas disimpan di browser. Mengirim ke Google Sheets...";
-    st.style.color = "#1769c2";
-
-    try {
-      // Kirim identitas ke Google Apps Script
-      await fetch(URL_WEB_APP, {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify({
-          kode: kode.value,
-          anggota: anggota.value.trim(),
-          kelas: kelas.value.trim()
-        })
-      });
-
-      // Mode no-cors tidak memungkinkan browser membaca
-      // respons server atau memastikan data benar-benar masuk.
-      st.textContent =
-        "📤 Permintaan pengiriman dikirim. Periksa Google Sheets untuk memastikan data masuk. Silakan lanjut ke slide Fase 1.";
-      st.style.color = "#218044";
-    } catch (e) {
-      st.textContent =
-        "⚠️ Identitas tersimpan di browser, tetapi pengiriman ke server gagal. Coba lagi.";
-      st.style.color = "#d9534f";
-    } finally {
-      tombol.disabled = false;
-      tombol.style.opacity = "1";
-      tombol.textContent = "✅ Simpan Identitas & Lanjut ke Fase 1";
-    }
-  };
-
-  muatLokal();
-})();
+    st.innerText = "✅ Identitas Kelompok " + kode + " tersimpan di perangkat! Silakan lanjut ke slide berikutnya.";
+    st.style.color = "#28a745";
+  }
 </script>
+
+</body>
+</html>
