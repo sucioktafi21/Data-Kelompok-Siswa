@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabel Hasil Pengamatan - HCl & AgNO3</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: transparent;">
+
+<div style="
+  font-family: 'Segoe UI', Arial, sans-serif;
+  width: 100%;
+  max-width: 1000px;
+  margin: 10px auto;
+  padding: 18px 22px;
+  background: linear-gradient(145deg, #ffffff, #f0f7ff);
+  border: 1px solid #d5e7ff;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(35, 100, 180, 0.1);
+  color: #19365b;
+  box-sizing: border-box;
+">
+
+  <!-- HEADER UTAMA -->
+  <div style="
+    background: linear-gradient(135deg, #1769c2, #63a7f5);
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    color: white;
+    text-align: center;
+  ">
+    <div style="font-size: 26px; margin-bottom: 2px;">🔬</div>
+    <div style="font-size: 18px; font-weight: 800; letter-spacing: 0.5px;">
+      TABEL HASIL PENGAMATAN PRAKTIKUM
+    </div>
+    <div style="font-size: 12px; margin-top: 2px; opacity: 0.95;">
+      Virtual Laboratory · Pengaruh Penambahan HCl &amp; AgNO₃
+    </div>
+  </div>
+
+  <!-- SUB-JUDUL 1: TABEL HCL -->
+  <div style="font-size: 14px; font-weight: 700; color: #234d7d; margin-bottom: 8px;">
+    🧪 Bagian 1: Pengaruh Penambahan Konsentrasi (HCl)
+  </div>
+
+  <div style="overflow-x: auto; margin-bottom: 20px; border-radius: 12px; border: 1px solid #bfd8f6;">
+    <table style="width: 100%; border-collapse: collapse; background: #ffffff; font-size: 12px; text-align: center;">
+      <thead>
+        <tr style="background: #e6f0fa; color: #1769c2;">
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Perlakuan</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Vol HCl (mL)</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Warna</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">[Co(H₂O)₆]²⁺ (M)</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">[Cl⁻] (M)</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">[CoCl₄]²⁻ (M)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #eef5fc;">
+          <td style="padding: 8px 4px; font-weight: 700; background: #f8fbff; text-align: left;">Kondisi Awal</td>
+          <td style="padding: 4px;"><input type="number" step="any" id="vol_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="text" id="warna_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="co_h2o_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cl_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cocl4_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eef5fc;">
+          <td style="padding: 8px 4px; font-weight: 700; background: #f8fbff; text-align: left;">Penambahan HCl 1</td>
+          <td style="padding: 4px;"><input type="number" step="any" id="vol_1" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="text" id="warna_1" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="co_h2o_1" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cl_1" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cocl4_1" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eef5fc;">
+          <td style="padding: 8px 4px; font-weight: 700; background: #f8fbff; text-align: left;">Penambahan HCl 2</td>
+          <td style="padding: 4px;"><input type="number" step="any" id="vol_2" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="text" id="warna_2" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="co_h2o_2" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cl_2" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cocl4_2" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+        </tr>
+        <tr>
+          <td style="padding: 8px 4px; font-weight: 700; background: #f8fbff; text-align: left;">Penambahan HCl 3</td>
+          <td style="padding: 4px;"><input type="number" step="any" id="vol_3" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="text" id="warna_3" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="co_h2o_3" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cl_3" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cocl4_3" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SUB-JUDUL 2: TABEL AGNO3 -->
+  <div style="font-size: 14px; font-weight: 700; color: #234d7d; margin-bottom: 8px; margin-top: 24px;">
+    🧪 Bagian 2: Pengaruh Penambahan AgNO₃
+  </div>
+
+  <div style="overflow-x: auto; margin-bottom: 14px; border-radius: 12px; border: 1px solid #bfd8f6;">
+    <table style="width: 100%; border-collapse: collapse; background: #ffffff; font-size: 12px; text-align: center;">
+      <thead>
+        <tr style="background: #e6f0fa; color: #1769c2;">
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Perlakuan</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Vol AgNO₃ (mL)</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Warna</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">Endapan</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">[Co(H₂O)₆]²⁺ (M)</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">[Cl⁻] (M)</th>
+          <th style="padding: 10px 6px; border-bottom: 2px solid #bfd8f6;">[CoCl₄]²⁻ (M)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom: 1px solid #eef5fc;">
+          <td style="padding: 8px 4px; font-weight: 700; background: #f8fbff; text-align: left;">Kondisi Awal</td>
+          <td style="padding: 4px;"><input type="number" step="any" id="vol_agno3_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="text" id="warna_agno3_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;">
+            <select id="endapan_0" style="width: 95%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;">
+              <option value="-">-</option>
+              <option value="Sedikit">Sedikit</option>
+              <option value="Sedang">Sedang</option>
+              <option value="Banyak">Banyak</option>
+            </select>
+          </td>
+          <td style="padding: 4px;"><input type="number" step="any" id="co_agno3_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cl_agno3_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+          <td style="padding: 4px;"><input type="number" step="any" id="cocl4_agno3_0" style="width: 90%; padding: 6px; border: 1px solid #bfd8f6; border-radius: 6px; text-align: center;"></td>
+        </tr>
+        <tr style="border-bottom: 1px solid #eef5fc;">
+          <td style="padding: 8px 4px; font-weight: 700; background: #f8fbff; text-align: left;">Penambahan AgNO₃
