@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumpulan e-LKPD</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: transparent; font-family: 'Segoe UI', Arial, sans-serif; color: #19365b;">
+
+<div style="width: 100%; max-width: 1000px; margin: 0 auto; box-sizing: border-box; padding: 16px 22px; background: linear-gradient(145deg, #fff, #f0f7ff); border: 1px solid #d5e7ff; border-radius: 18px; box-shadow: 0 6px 20px rgba(35,100,180,0.1);">
+
+  <!-- HEADER -->
+  <div style="background: linear-gradient(135deg, #1769c2, #63a7f5); padding: 13px 18px; border-radius: 13px; margin-bottom: 16px; color: white; text-align: center;">
+    <div style="font-size: 26px;">🚀</div>
+    <div style="font-size: 18px; font-weight: 800; letter-spacing: 0.5px;">PENGUMPULAN AKHIR e-LKPD</div>
+    <div style="font-size: 12px; margin-top: 4px; opacity: 0.95;">Isi identitas kelompok dan nilai kuis Eduplay sebelum menyelesaikan LKPD</div>
+  </div>
+
+  <!-- FORM IDENTITAS & SKOR EDUPLAY -->
+  <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px;">
+    <div>
+      <label style="font-size: 12.5px; font-weight: 700; color: #234d7d;">Kode Kelompok:</label>
+      <input type="text" id="kode_kelompok" placeholder="Contoh: KEL-01" style="width: 100%; padding: 8px; border: 1px solid #bfd8f6; border-radius: 8px; font-size: 13px; box-sizing: border-box; margin-top: 4px;">
+    </div>
+
+    <div>
+      <label style="font-size: 12.5px; font-weight: 700; color: #234d7d;">Nama Kelompok / Nama Tim:</label>
+      <input type="text" id="nama_kelompok" placeholder="Contoh: Kelompok 3 (Orang Utan)" style="width: 100%; padding: 8px; border: 1px solid #bfd8f6; border-radius: 8px; font-size: 13px; box-sizing: border-box; margin-top: 4px;">
+    </div>
+
+    <div>
+      <label style="font-size: 12.5px; font-weight: 700; color: #234d7d;">Kelas:</label>
+      <input type="text" id="kelas" placeholder="Contoh: XI Kimia 1" style="width: 100%; padding: 8px; border: 1px solid #bfd8f6; border-radius: 8px; font-size: 13px; box-sizing: border-box; margin-top: 4px;">
+    </div>
+
+    <div>
+      <label style="font-size: 12.5px; font-weight: 700; color: #234d7d;">Nama Anggota Kelompok:</label>
+      <textarea id="anggota" placeholder="1. Ani&#10;2. Budi&#10;3. Cici..." style="width: 100%; height: 55px; padding: 8px; border: 1px solid #bfd8f6; border-radius: 8px; font-size: 13px; box-sizing: border-box; margin-top: 4px; font-family: inherit; resize: vertical;"></textarea>
+    </div>
+
+    <!-- SKOR EDUPLAY (FASE 7) -->
+    <div style="background: #eef6ff; padding: 12px; border-radius: 10px; border: 1.5px solid #bfd8f6; margin-top: 4px;">
+      <label style="font-size: 13px; font-weight: 700; color: #1769c2; display: block;">🏆 Nilai Kuis Eduplay (Fase 7):</label>
+      <input type="number" id="skor_eduplay" placeholder="Masukkan angka skor dari Eduplay (misal: 85)" style="width: 100%; padding: 8px; border: 1px solid #1769c2; border-radius: 8px; font-size: 13px; box-sizing: border-box; margin-top: 6px;">
+    </div>
+  </div>
+
+  <!-- TOMBOL FINISH -->
+  <button id="btnFinish" onclick="bukaKonfirmasi()" style="
+    width: 100%; padding: 12px; background: linear-gradient(135deg, #1769c2, #3989e8); color: white; border: none; border-radius: 10px;
+    font-size: 15px; font-weight: 800; cursor: pointer; transition: 0.2s; box-shadow: 0 4px 12px rgba(23,105,194,0.3);
+  ">
+    🏁 Finish
+  </button>
+
+  <div id="statusKirim" style="font-size: 12px; text-align: center; margin-top: 10px; font-weight: 600;"></div>
+
+</div>
+
+<!-- POPUP MODAL KONFIRMASI -->
+<div id="modalKonfirmasi" style="
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(3px);
+  justify-content: center; align-items: center; z-index: 9999;
+">
+  <div style="
+    background: #ffffff; padding: 22px; border-radius: 16px; width: 88%; max-width: 380px;
+    text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); border: 1px solid #bfd8f6;
+  ">
+    <div style="font-size: 34px; margin-bottom: 6px;">⚠️</div>
+    <h3 style="margin: 0 0 8px 0; color: #1769c2; font-size: 16px; font-weight: 800;">Konfirmasi Pengumpulan</h3>
+    <p style="font-size: 12.5px; color: #444; line-height: 1.5; margin-bottom: 18px;">
+      Pastikan seluruh jawaban dari <b>Fase 1 sampai Fase 6</b> dan <b>Nilai Kuis Eduplay</b> sudah terisi dengan benar di perangkatmu sebelum mengklik tombol kirim!
+    </p>
+    <div style="display: flex; gap: 10px; justify-content: center;">
+      <button onclick="tutupKonfirmasi()" style="
+        flex: 1; padding: 9px; border: 1px solid #cbd5e1; background: #f1f5f9; color: #475569;
+        border-radius: 8px; font-weight: 700; font-size: 12.5px; cursor: pointer;
+      ">
+        🔍 Cek Lagi
+      </button>
+      <button onclick="kirimLKPD()" style="
+        flex: 1; padding: 9px; border: none; background: #1769c2; color: white;
+        border-radius: 8px; font-weight: 700; font-size: 12.5px; cursor: pointer; box-shadow: 0 3px 8px rgba(23,105,194,0.3);
+      ">
+        🚀 Ya, Kirim Sekarang
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ⚠️ TEMPEL URL APPS SCRIPT BERAKHIRAN /exec KAMU DI DALAM TANDA KUTIP DI BAWAH INI:
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwrnuY2l-Qz3f1b6_rymktw-1h-ymRefLqdcAdKntXFMIMKQ9w2gJPmWlDy6tIU8OlkkQ/exec";
+
+const kodeKelompok = document.getElementById("kode_kelompok");
+const namaKelompok = document.getElementById("nama_kelompok");
+const kelasInput = document.getElementById("kelas");
+const anggotaInput = document.getElementById("anggota");
+const skorEduplay = document.getElementById("skor_eduplay");
+const statusKirim = document.getElementById("statusKirim");
+const modalKonfirmasi = document.getElementById("modalKonfirmasi");
+
+// Muat data dari localStorage jika pernah diisi sebelumnya
+kodeKelompok.value = localStorage.getItem("elkpd_kode") || "";
+namaKelompok.value = localStorage.getItem("elkpd_kelompok") || "";
+kelasInput.value = localStorage.getItem("elkpd_kelas") || "";
+anggotaInput.value = localStorage.getItem("elkpd_anggota") || "";
+skorEduplay.value = localStorage.getItem("elkpd_fase7_skor") || "";
+
+// Simpan otomatis data identitas saat siswa mengetik
+[kodeKelompok, namaKelompok, kelasInput, anggotaInput, skorEduplay].forEach(el => {
+  el.addEventListener("input", () => {
+    localStorage.setItem("elkpd_kode", kodeKelompok.value.trim());
+    localStorage.setItem("elkpd_kelompok", namaKelompok.value.trim());
+    localStorage.setItem("elkpd_kelas", kelasInput.value.trim());
+    localStorage.setItem("elkpd_anggota", anggotaInput.value.trim());
+    localStorage.setItem("elkpd_fase7_skor", skorEduplay.value.trim());
+  });
+});
+
+function bukaKonfirmasi() {
+  if (!kodeKelompok.value.trim()) {
+    alert("Mohon isi Kode Kelompok terlebih dahulu!");
+    return;
+  }
+  if (!namaKelompok.value.trim() || !kelasInput.value.trim()) {
+    alert("Mohon isi Nama Kelompok dan Kelas terlebih dahulu!");
+    return;
+  }
+  modalKonfirmasi.style.display = "flex";
+}
+
+function tutupKonfirmasi() {
+  modalKonfirmasi.style.display = "none";
+}
+
+function kirimLKPD() {
+  tutupKonfirmasi();
+
+  const btn = document.getElementById("btnFinish");
+  btn.disabled = true;
+  btn.style.background = "#94a3b8";
+  btn.textContent = "⏳ Mengirim data...";
+  statusKirim.style.color = "#1769c2";
+  statusKirim.textContent = "Sedang mengirim seluruh jawaban ke Google Sheets...";
+
+  // 1. Ambil data Tabel Pengamatan Praktikum (fase4.html)
+  const dataTabelFase4 = `[Tabel HCl]: Vol0=${localStorage.getItem("elkpd_vol_0")||"-"}, W0=${localStorage.getItem("elkpd_warna_0")||"-"}, Co0=${localStorage.getItem("elkpd_co_h2o_0")||"-"}, Cl0=${localStorage.getItem("elkpd_cl_0")||"-"}, CoCl40=${localStorage.getItem("elkpd_cocl4_0")||"-"} | [Tabel AgNO3]: Vol0=${localStorage.getItem("elkpd_vol_agno3_0")||"-"}, W0=${localStorage.getItem("elkpd_warna_agno3_0")||"-"}, Endapan0=${localStorage.getItem("elkpd_endapan_0")||"-"} ...`;
+
+  // 2. Gabungkan Tabel Pengamatan + Seluruh Soal Analisis ke dalam Kolom Fase 4
+  const gabunganFase4 = `--- TABEL PENGAMATAN (fase4.html) ---
+` + dataTabelFase4 + `
+
+--- SOAL ANALISIS DATA ---
+[Soal 1]: ` + (localStorage.getItem("elkpd_soal1") || "-") + `
+[Soal 2]: ` + (localStorage.getItem("elkpd_soal2") || "-") + `
+[Soal 3]: ` + (localStorage.getItem("elkpd_soal3") || "-") + `
+[Soal 4]: ` + (localStorage.getItem("elkpd_soal4") || "-") + `
+[Soal 5]: ` + (localStorage.getItem("elkpd_soal5") || "-");
+
+  // 3. Susun Payload Akhir untuk Apps Script
+  const payload = {
+    kode: kodeKelompok.value.trim(),
+    nama: namaKelompok.value.trim(),
+    kelas: kelasInput.value.trim(),
+    anggota: anggotaInput.value.trim(),
+    
+    // fase1.html
+    fase1_info: localStorage.getItem("elkpd_fase1") || "-",
+    
+    // rm.html & hipotesis.html
+    fase2: "[Rumusan Masalah]: " + (localStorage.getItem("elkpd_fase2_masalah") || "-") + 
+           "\n[Hipotesis]: " + (localStorage.getItem("elkpd_fase2_hipotesis") || "-"),
+    
+    // fase3.html
+    fase3: localStorage.getItem("elkpd_fase3") || "-",
+    
+    // fase4.html + soal1-5.html
+    fase4: gabunganFase4,
+    
+    // fase5.html
+    fase5: localStorage.getItem("elkpd_fase5") || localStorage.getItem("elkpd_kesimpulan") || "-",
+    
+    // fase6.html
+    fase6: "Status: " + (localStorage.getItem("elkpd_fase6_status") || "-") + 
+           " | Alasan: " + (localStorage.getItem("elkpd_fase6_alasan") || "-") + 
+           " | Catatan: " + (localStorage.getItem("elkpd_fase6_catatan") || "-"),
+    
+    // Skor Eduplay
+    fase7: skorEduplay.value.trim() || "-"
+  };
+
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  })
+  .then(() => {
+    statusKirim.style.color = "#16a34a";
+    statusKirim.innerHTML = "✅ <b>Berhasil!</b> Seluruh e-LKPD kelompokmu sudah terkirim ke Google Sheets Guru.";
+    btn.textContent = "✅ Selesai & Terkirim!";
+  })
+  .catch(error => {
+    console.error("Error:", error);
+    statusKirim.style.color = "#dc2626";
+    statusKirim.textContent = "❌ Gagal mengirim. Coba periksa koneksi internetmu.";
+    btn.disabled = false;
+    btn.style.background = "linear-gradient(135deg, #1769c2, #3989e8)";
+    btn.textContent = "🏁 Finish";
+  });
+}
+</script>
+
+</body>
+</html>
