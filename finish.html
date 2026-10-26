@@ -132,6 +132,9 @@ function kirimLKPD() {
     statusKirim.style.color = "#16a34a";
     statusKirim.innerHTML = "✅ <b>Berhasil!</b> Seluruh e-LKPD kelompokmu sudah terkirim ke Google Sheets Guru.";
     btn.textContent = "✅ Selesai & Terkirim!";
+
+    // 🧹 TAMBAHAN: Bersihkan memori browser setelah data sukses terkirim ke Sheets
+    localStorage.clear();
   })
   .catch(error => {
     console.error("Error:", error);
